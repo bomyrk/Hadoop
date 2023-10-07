@@ -1,0 +1,24 @@
+# Assignment_1
+
+#1. create a directory in your cluster
+hadoop fs -ls /
+hadoop fs -mkdir intel
+hadoop fs -ls /user/hadoop
+
+#2. create three text files and upload them to the newly created directory
+hadoop fs -ls /user/hadoop
+fallocate -l 10M myfile1.txt
+ls -l myfile1.txt
+fallocate -l 20M myfile2.txt
+ls -l myfile2.txt
+fallocate -l 30M myfile3.txt
+ls -l myfile3.txt
+hadoop fs -put myfile1.txt /user/hadoop/intel
+hadoop fs -put myfile2.txt /user/hadoop/intel
+hadoop fs -put myfile3.txt /user/hadoop/intel
+hadoop fs -ls /usr/hadoop/intel
+
+#3 Download one of of these text files to your local
+hadoop fs -get /user/hadoop/intel/myfile1.txt Downloads
+cd Downloads
+ls 
